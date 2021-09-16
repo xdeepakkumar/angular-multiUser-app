@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button class="example-icon" style="margin-right: 20px;" routerLink="/login" *ngIf="!isLoggedIn">
+    <i class="fas fa-sign-in-alt"></i>
+  </button>
+  <button mat-raised-button class="example-icon" style="margin-right: 20px;" routerLink="/register" *ngIf="!isLoggedIn">
+    <i class="fas fa-user-plus"></i>
+  </button>
+
+  <a mat-button style="margin-right: 10px !important;" routerLink="/admin-dashboard/profile" *ngIf="isLoggedIn && user != '' ">
+    {{user.username  }}
+  </a>
+  <a mat-raised-button class="example-icon" (click)="logout()" style="margin-right: 20px !important; background-color: tomato; color: white;" *ngIf="isLoggedIn">
+    Logout
+  </a>
+</mat-toolbar>
